@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EducAIte - Lecture Generator</title>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='pico.fluid.classless.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <div class="links">
+        <a href="/"><span>Home</span></a>
+        <a href="#"><span>About</span></a>
+        <a href="#"><span>Contact</span></a>
+        <div class="sidebar-dropdown">
+          <a href="javascript:void(0)" onclick="toggleServicesDropdown()"><span>Services ▾</span></a>
+          <div class="dropdown-content" id="services-dropdown">
+            <a href="/LectureGenerator"><span>Lecture Generator</span></a>
+            <a href="/QuizGenerator"><span>Quiz Generator</span></a>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <br />
+      <div class="sidebar-lectures">
+        <p class="sidebar-section-title">Saved Lectures</p>
+        <div id="sidebar-lecture-list">
+          <p class="sidebar-empty">No saved lectures yet.</p>
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <div>
+        <img src="/static/EAI 2.png" class="openbtn" onclick="openNav()" />
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#try">Try It Out</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <div class="main-content" id="try">
+      <div>
+        <section class="input-section fadeInUp">
+          <img class="logo" src="/static/EducAIte 1.png" alt="EducAIte" />
+          <h2>AI Lecture Generator</h2>
+
+          <div class="input-pill">
+            <input
+              type="text"
+              id="topic"
+              placeholder="Enter any topic…"
+              onkeypress="handleEnter(event)"
+              autocomplete="off" />
+            <button onclick="generateLecture()">Generate Lecture</button>
+          </div>
+        </section>
+
+        <section class="output-section">
+          <div id="output"></div>
+          <div id="loading">
+            <div class="loader"></div>
+            <span>Generating your lecture…</span>
+          </div>
+          <div id="error"></div>
+        </section>
+      </div>
+    </div>
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h1>Lecture Saved!</h1>
+          <span class="close" id="closePopup" onclick="closePopup()">&times;</span>
+        </div>
+        <div class="popup-body" id="popup-text"></div>
+      </div>
+    </div>
+    <!-- Footer content -->
+    <div class="eop">
+      <section class="info-sections">
+        <section id="about" class="about">
+          <h2>About The System</h2>
+          <p>
+            EducAIte is an AI-powered lecture generator that helps educators and students create engaging educational
+            content quickly and efficiently.
+          </p>
+        </section>
+        <section id="contact" class="contact">
+          <h2>Contact Us</h2>
+          <p>Email: <a href="mailto:info@educaite.com">info@educaite.com</a></p>
+          <p>Phone: +355 123 456 789</p>
+        </section>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 EducAIte. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EducAIte - AI-Powered Learning</title>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='pico.fluid.classless.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <style></style>
+  </head>
+
+  <body>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <div class="links">
+        <a href="/"><span>Home</span></a>
+        <a href="#"><span>About</span></a>
+        <a href="#"><span>Contact</span></a>
+        <div class="sidebar-dropdown">
+          <a href="javascript:void(0)" onclick="toggleServicesDropdown()"><span>Services ▾</span></a>
+          <div class="dropdown-content" id="services-dropdown">
+            <a href="/LectureGenerator"><span>Lecture Generator</span></a>
+            <a href="/QuizGenerator"><span>Quiz Generator</span></a>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <br />
+      <div class="sidebar-lectures">
+        <p class="sidebar-section-title">Saved Lectures</p>
+        <div id="sidebar-lecture-list">
+          <p class="sidebar-empty">No saved lectures yet.</p>
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <div>
+        <img src="/static/EAI 2.png" class="openbtn" onclick="openNav()" />
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="LectureGenerator">Try It Out</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero" id="try">
+      <img src="/static/EducAIte 1.png" alt="EducAIte" class="hero-logo" />
+      <h1 class="hero-tagline">Learn anything.<br /><span>Powered by AI.</span></h1>
+      <p class="hero-sub">
+        EducAIte generates rich, structured lectures and interactive quizzes on any topic in seconds — so you can focus
+        on understanding, not preparation.
+      </p>
+      <div class="hero-cta">
+        <a href="/LectureGenerator" class="btn-primary">Generate a Lecture</a>
+        <a href="/QuizGenerator" class="btn-secondary">Try the Quiz Generator</a>
+      </div>
+      <div class="scroll-hint">
+        <span>Explore</span>
+        <i class="fa fa-angle-down"></i>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <p class="section-label">What we offer</p>
+      <h2 class="section-title">Everything you need to learn faster</h2>
+      <p class="section-sub">Two powerful tools, one seamless experience — built for students and educators alike.</p>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">📚</div>
+          <h3>AI Lecture Generator</h3>
+          <p>
+            Enter any topic and receive a full, structured lecture, complete with introduction, body, examples, and
+            conclusion, in moments.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h3>Interactive Quiz Generator</h3>
+          <p>
+            Turn any lecture, be it text or a file, into a ready-to-take quiz with instant feedback and scoring. Learn
+            by doing.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💾</div>
+          <h3>Save &amp; Revisit</h3>
+          <p>
+            Save your generated lectures and access them any time from the sidebar. Your personal library, always at
+            hand.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works" id="how">
+      <p class="section-label">Simple by design</p>
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">Three steps is all it takes.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Enter a Topic</h4>
+          <p>Type any subject — from quantum physics to ancient history — into the generator.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>AI Builds Your Content</h4>
+          <p>Our AI crafts a full lecture and quiz tailored to your topic in seconds.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Learn &amp; Test Yourself</h4>
+          <p>Read, review, and take the quiz. Save your lecture to come back whenever you need it.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-banner" id="cta">
+      <h2>Ready to learn something new?</h2>
+      <p>Pick a topic, generate a lecture, and quiz yourself — all in under a minute.</p>
+      <a href="/LectureGenerator" class="btn-primary">Try It Out</a>
+    </div>
+
+    <div class="eop">
+      <section class="info-sections">
+        <section id="about" class="about">
+          <h2>About The System</h2>
+          <p>
+            EducAIte is an AI-powered lecture generator that helps educators and students create engaging educational
+            content quickly and efficiently.
+          </p>
+        </section>
+        <section id="contact" class="contact">
+          <h2>Contact Us</h2>
+          <p>Email: <a href="mailto:info@educaite.com">info@educaite.com</a></p>
+          <p>Phone: +355 123 456 789</p>
+        </section>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 EducAIte. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
